@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(120deg, #ccae4d, #fda085);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+header {
+  font-size: 1.5rem;
+}
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form input,
+form button {
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  background: whitesmoke;
+}
+form button {
+  color: #fda085;
+  background: white;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+form button:hover {
+  background: #fda085;
+  color: white;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+.todo {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 500ms ease;
+}
+
+.todo li {
+  flex: 1;
+}
+.trash-btn,
+.completed-btn {
+  background: #ff6f47;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: Pointer;
+  font-size: 1rem;
+}
+.completed-btn {
+  background: rgb(73, 204, 73);
+}
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.note {
+  display: flex;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 4px 2px;
+  justify-content: center;
+  align-items: center;
+  color: #0e153a;
+  animation-name: oly;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes oly {
+  0% {
+    top: -50px;
+  }
+  100% {
+    top: 3px;
+  }
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: #ff6f47;
+  width: 10rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  background: #ff6f47;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  pointer-events: none;
+}
+
+.select:hover::after {
+  background: white;
+  color: #ff6f47;
+  transition: all 300ms ease-in;
+}
+
+@media screen and (max-width: 420px) {
+  header {
+    font-size: 1rem;
+  }
+
+  select {
+    display: block;
+  }
+  header,
+  form {
+    margin-left: 10px;
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
